@@ -33,14 +33,6 @@ def flip_freq(letter_freq):
     count_freq[k] = "".join(sorted(v))
   return count_freq 
 
-def rotate_letter(sid, letter):
-  ''' rotate right a letter sid number of times, then return the new letter'''
-  alphabet = string.ascii_lowercase
-  shifted_value = alphabet.index(letter) + int(sid)
-  # modulate over 26 to find new character position
-  return alphabet[(shifted_value % 26)]
-  
-
 if __name__ == "__main__":
 
   total_sum = 0
