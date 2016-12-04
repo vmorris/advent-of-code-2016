@@ -42,8 +42,6 @@ def rotate_letter(sid, letter):
   
 
 if __name__ == "__main__":
-
-  total_sum = 0
   
   with open('input.txt', 'r') as f:
     for room in f:
@@ -69,7 +67,3 @@ if __name__ == "__main__":
           else:
             rotated_name.append(' ')
         print(sectorID,":::","".join(rotated_name))
-
-      
-
-
