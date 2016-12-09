@@ -5,7 +5,7 @@
 # © All Rights Reserved
 # Wheeeee @iVanceMorris
 
-debug = True
+debug = False
 
 display = [ ['.']*50,
             ['.']*50,
@@ -17,6 +17,7 @@ display = [ ['.']*50,
 def print_display():
   for line in display:
     print(''.join(line))
+  print()
 
 def tokenize_instruction(line):
   return line.strip().split()
@@ -35,15 +36,18 @@ def turn_on_rect(area):
       display[i][j] = '#'
 
 def rotate_right(l, n):
-  if debug:
-    print('before RoR:')
-    print(''.join(l))
   result = l[-n:] + l[:-n]
-  if debug:
-    print('l[-n:]=',l[-n:])
-    print('after RoR:')
-    print(''.join(result))
   return result
+
+def rotate_vertical(l, n):
+  for _ in range(n):
+    temp = display[5][l]
+    display[5][l] = display[4][l] 
+    display[4][l] = display[3][l]
+    display[3][l] = display[2][l]
+    display[2][l] = display[1][l]
+    display[1][l] = display[0][l]
+    display[0][l] = temp
 
 def rotate_line(t):
   xy = int(t[2].split('=')[1])
@@ -53,10 +57,11 @@ def rotate_line(t):
   if t[1] == 'row':
     if debug:
       print('   rotating row y=', xy, 'by', val)
-    display[xy] = rotate_right(display[xy-1], val)
+    display[xy] = rotate_right(display[xy], val)
   elif t[1] == 'column':
     if debug:
-      print('   rotating column x=', xy, 'by', t[4])
+      print('   rotating column x=', xy, 'by', val)
+    rotate_vertical(xy, val)
   else:
     exit(1)
 
@@ -64,7 +69,7 @@ if __name__ == '__main__':
 
   print_display()
 
-  with open('test.txt', 'r') as f:
+  with open('input.txt', 'r') as f:
     lines = f.readlines()
 
   for line in lines:
