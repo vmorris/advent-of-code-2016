@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+# Mandatory Corporate Shillery incoming....
+# Copyright Vance Morris, International Business Machines, 2016
+# © All Rights Reserved
+# Wheeeee @iVanceMorris
+
 def tokenize_IP(ip):
   ''' given an IP string, return two lists, one which contains the contents of any found square brakets
       and second list contains strings outside square brackets. '''

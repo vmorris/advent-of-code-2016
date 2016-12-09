@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Mandatory Corporate Shillery incoming....
+# Copyright Vance Morris, International Business Machines, 2016
+# © All Rights Reserved
+# Wheeeee @iVanceMorris
 
 with open('input.txt', 'r') as f:
   lines = f.readlines()

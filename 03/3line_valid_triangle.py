@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
 
+# Mandatory Corporate Shillery incoming....
+# Copyright Vance Morris, International Business Machines, 2016
+# © All Rights Reserved
+# Wheeeee @iVanceMorris
 
 def valid_triangle(a,b,c):
   if (a+b <= c) or (b+c <= a) or (a+c <= b):
